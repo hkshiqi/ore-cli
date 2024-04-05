@@ -57,7 +57,7 @@ struct Args {
 }
 
 #[derive(Subcommand, Debug)]
-enum Commands {
+enum 命令 {
     #[command(about = "Fetch the Ore balance of an account")]
     Balance(BalanceArgs),
 
@@ -211,7 +211,7 @@ impl Miner {
 
     pub fn signer(&self) -> Keypair {
         match self.keypair_filepath.clone() {
-            Some(filepath) => read_keypair_file(filepath).unwrap(),
+            Some(keypair) => keypair.clone()， // 返回传递进来的密钥对
             None => panic!("No keypair provided"),
         }
     }
