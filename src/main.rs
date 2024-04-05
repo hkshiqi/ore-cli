@@ -211,7 +211,7 @@ impl Miner {
 
     pub fn signer(&self) -> Keypair {
         match self.keypair_filepath.clone() {
-            Some(keypair) => keypair.clone()， // 返回传递进来的密钥对
+            Some(keypair) => keypair.clone(),
             None => panic!("No keypair provided"),
         }
     }
